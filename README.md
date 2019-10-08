@@ -39,8 +39,8 @@
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
-|body|string|-------|
-|image|string|-------|
+|body|string||
+|image|string||
 
 ### Association
 - belongs_to :group
