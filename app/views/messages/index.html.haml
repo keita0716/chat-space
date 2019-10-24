@@ -12,10 +12,10 @@
           keita
           .left-box__top__viewarea__right
             .left-box__top__viewarea__right__edit
-              %a( href='#' id='left-edit')
+              = link_to "#" do
                 %i.fa.fa-edit 
             .left-box__top__viewarea__right__setting
-              %a( href='#' id='left-setting')
+              = link_to "#" do
                 %i.fa.fa-cog
       .left-box__bottom
         .left-box__bottom__group
@@ -70,7 +70,8 @@
             .main-box__header__left-box__member-list__member
               keita
         .main-box__header__edit-button
-          %a( href='#' id='edit')Edit
+          = link_to "#" do
+            Edit
       .main-box__messages
         .main-box__messages__message
           .main-box__messages__message__top
@@ -141,10 +142,10 @@
       .main-box__send-box
         .main-box__send-box__newmessage
           .main-box__send-box__newmessage__input-box
-            %input{:name => "message", :class => "main-box__send-box__newmessage__input-box__text", :placeholder => "type a message"}
-            %label{:class => "main-box__send-box__newmessage__input-box__image",:for => "message_image"}
+            %input{name: "message", class: "main-box__send-box__newmessage__input-box__text", placeholder: "type a message"}
+            %label{class: "main-box__send-box__newmessage__input-box__image", for: "message_image"}
               %i.fa.fa-image
-              %input{:class => "main-box__send-box__newmessage__input-box__image__file", :type => "file" ,:name => "file" ,:id => "message_image"}
+              %input{class: "main-box__send-box__newmessage__input-box__image__file", type: "file" ,name: "file" ,id: "message_image"}
 
-            %input{:type => "submit", :name => "commit", :value => "Send" ,:class => "main-box__send-box__newmessage__input-box__submit-button" , :data-disable-with => "send"}
+            %input{type: "submit", name: "commit", value: "Send" ,class: "main-box__send-box__newmessage__input-box__submit-button" , "data-disable-with": "send"}
 
