@@ -1,142 +1,56 @@
-.top-box
-  グループを作成しました
--# 左部分の記述＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃
-.left-box
-  .left-box__top
-    .left-box__top__viewarea
-      keita
-      .left-box__top__viewarea__right
-        .left-box__top__viewarea__right__edit
-          = link_to "#" do
-            %i.fa.fa-edit 
-        .left-box__top__viewarea__right__setting
-          = link_to "#" do
-            %i.fa.fa-cog
-  .left-box__bottom
-    .left-box__bottom__group
-      .left-box__bottom__group__name
-        keita1
-      .left-box__bottom__group__message
-        message1
-    .left-box__bottom__group
-      .left-box__bottom__group__name
-        keita2
-      .left-box__bottom__group__message
-        message2
-    .left-box__bottom__group
-      .left-box__bottom__group__name
-        keita3
-      .left-box__bottom__group__message
-        message3
-    .left-box__bottom__group
-      .left-box__bottom__group__name
-        keita4
-      .left-box__bottom__group__message
-        message4
-    .left-box__bottom__group
-      .left-box__bottom__group__name
-        keita5
-      .left-box__bottom__group__message
-        message5
-    .left-box__bottom__group
-      .left-box__bottom__group__name
-        keita6
-      .left-box__bottom__group__message
-        message6
-    .left-box__bottom__group
-      .left-box__bottom__group__name
-        keita7
-      .left-box__bottom__group__message
-        message7
-    .left-box__bottom__group
-      .left-box__bottom__group__name
-        keita8
-      .left-box__bottom__group__message
-        message8
--# 右部分の記述＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃
-.main-box
-  .main-box__header
-    .main-box__header__left-box
-      .main-box__header__left-box__group-name
-        group1
-      .main-box__header__left-box__member-list
-        Member:
-        .main-box__header__left-box__member-list__member
-          keita
-    .main-box__header__edit-button
-      = link_to "#" do
-        Edit
-  .main-box__messages
-    .main-box__messages__message
-      .main-box__messages__message__top
-        .main-box__messages__message__top__name
-          keita
-        .main-box__messages__message__top__date
-          2019/09/30(Mon) 20:03:40
-      .main-box__messages__message__text
-      メッセージ１
-    .main-box__messages__message
-      .main-box__messages__message__top
-        .main-box__messages__message__top__name
-          keita
-        .main-box__messages__message__top__date
-          2019/09/30(Mon) 20:03:40
-      .main-box__messages__message__text
-      メッセージ２
-    .main-box__messages__message
-      .main-box__messages__message__top
-        .main-box__messages__message__top__name
-          keita
-        .main-box__messages__message__top__date
-          2019/09/30(Mon) 20:03:40
-      .main-box__messages__message__text
-      メッセージ３
-    .main-box__messages__message
-      .main-box__messages__message__top
-        .main-box__messages__message__top__name
-          keita
-        .main-box__messages__message__top__date
-          2019/09/30(Mon) 20:03:40
-      .main-box__messages__message__text
-      メッセージ４
-    .main-box__messages__message
-      .main-box__messages__message__top
-        .main-box__messages__message__top__name
-          keita
-        .main-box__messages__message__top__date
-          2019/09/30(Mon) 20:03:40
-      .main-box__messages__message__text
-      メッセージ５
-    .main-box__messages__message
-      .main-box__messages__message__top
-        .main-box__messages__message__top__name
-          keita
-        .main-box__messages__message__top__date
-          2019/09/30(Mon) 20:03:40
-      .main-box__messages__message__text
-      メッセージ６
-    .main-box__messages__message
-      .main-box__messages__message__top
-        .main-box__messages__message__top__name
-          keita
-        .main-box__messages__message__top__date
-          2019/09/30(Mon) 20:03:40
-      .main-box__messages__message__text
-      メッセージ７
-    .main-box__messages__message
-      .main-box__messages__message__top
-        .main-box__messages__message__top__name
-          keita
-        .main-box__messages__message__top__date
-          2019/09/30(Mon) 20:03:40
-      .main-box__messages__message__text
-      メッセージ８
-  .main-box__send-box
-    .main-box__send-box__newmessage
-      .main-box__send-box__newmessage__input-box
-        %input{name: "message", class: "main-box__send-box__newmessage__input-box__text", placeholder: "type a message"}
-        %label{class: "main-box__send-box__newmessage__input-box__image", for: "message_image"}
-          %i.fa.fa-image
-          %input{class: "main-box__send-box__newmessage__input-box__image__file", type: "file" ,name: "file" ,id: "message_image"}
-        %input{type: "submit", name: "commit", value: "Send" ,class: "main-box__send-box__newmessage__input-box__submit-button" , "data-disable-with": "send"}
+.wrapper
 
+  = render 'shared/side_bar'
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+    .form
+      %form
+        %input.form__message
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
