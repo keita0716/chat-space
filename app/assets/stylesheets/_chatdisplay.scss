@@ -9,7 +9,7 @@
 .left-box{
   width: 300px;
   color: white;
-  height: calc(100vh - 24px);
+  height: 100vh;
   background-color: #2f3e51;
   float: left;
   &__top{
@@ -44,7 +44,7 @@
   }
   &__bottom{
     padding: 20px 20px 0;
-    height:calc(100vh - 144px);
+    height:calc(100vh - 120px);
     overflow: scroll;
     &__group{
       margin-bottom: 40px;
@@ -103,7 +103,7 @@
   }
 
   &__messages{
-    height: calc(100vh - 307px);
+    height: calc(100vh - 283px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
