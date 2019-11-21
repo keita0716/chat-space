@@ -6,10 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    logger.debug("----------------------create----------------------")
-    logger.debug(params)
     @message = Message.create(content: message_params[:content], image: message_params[:image], group_id: message_params[:group_id],user_id: current_user.id)
-    logger.debug("----------------------messageセットしたよ----------------------")
     respond_to do |format|
       format.html { redirect_to group_messages_path, notice: "メッセージを送信しました" }
       format.json
