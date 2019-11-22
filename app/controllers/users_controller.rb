@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
 
+def index
+  # binding.pry
+  @users = User.search(params[:input], current_user.id)
+  respond_to do |format|
+    format.html
+    format.json
+  end
+end
+
   def edit
   end
 

@@ -14,7 +14,9 @@
               = group_user.user.name
       .right-header
         .right-header__button
-          Edit
+          = link_to edit_group_path(@group.id) do
+            = "Edit"
+          
     .messages
       - @messages.each do |message|
         .message
