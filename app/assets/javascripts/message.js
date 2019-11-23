@@ -77,7 +77,7 @@ $(function() {
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
     })
     .fail(function() {
-      console.log('error');
+      alert("メッセージの自動読み込みに失敗しました");
     });
 
   };
