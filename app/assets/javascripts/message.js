@@ -25,8 +25,7 @@ $(function() {
       </div>`
     return html;
   };
-
-
+  
   var reloadMessages = function() {
     // 自動更新が必要ない画面では行わないようにする
     // ⇨/groups/と/messagesの文字列が存在するURLの時のみ処理を行う
@@ -42,7 +41,6 @@ $(function() {
     urlchilds.splice(-1, 0, 'api')
     url = urlchilds.join('/')
     
-
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     messageAll = document.getElementsByClassName('message')
     var last_message_id = 0
@@ -53,7 +51,6 @@ $(function() {
         last_message_id = num
       }
     });
-
 
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
@@ -81,8 +78,6 @@ $(function() {
     });
 
   };
-
-
 
   function buildHTML(message){
     var imageHtml;
@@ -130,11 +125,6 @@ $(function() {
       alert("メッセージ送信に失敗しました");
     })
   })
-
-
-
-
- 
 
   setInterval(reloadMessages, 7000);
 })
