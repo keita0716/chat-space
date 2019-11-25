@@ -17,18 +17,18 @@
           = link_to edit_group_path(@group.id) do
             = "Edit"
           
--#     .messages
--#       - @messages.each do |message|
--#         .message{data: {message_id: message.id}}
--#           .upper-message
--#             .upper-message__user-name
--#               = message.user.name
--#             .upper-message__date
--#               = message.updated_at.strftime('%Y年%m月%d日 %H時%M分')
--#           .lower-meesage
--#             .lower-message__content
--#               = message.content
--#               = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+    .messages
+      - @messages.each do |message|
+        .message{data: {message_id: message.id}}
+          .upper-message
+            .upper-message__user-name
+              = message.user.name
+            .upper-message__date
+              = message.updated_at.strftime('%Y年%m月%d日 %H時%M分')
+          .lower-meesage
+            .lower-message__content
+              = message.content
+              = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 -#     .form
 -#       %form{:id => 'new_message'}
 -#         %input.form__message{:name => 'content'}
