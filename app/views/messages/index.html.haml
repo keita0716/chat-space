@@ -23,11 +23,11 @@
           .upper-message
             .upper-message__user-name
               = message.user.name
-            .upper-message__date
-              = message.updated_at.strftime('%Y年%m月%d日 %H時%M分')
-          .lower-meesage
-            .lower-message__content
-              = message.content
+          -#   .upper-message__date
+          -#     = message.updated_at.strftime('%Y年%m月%d日 %H時%M分')
+          -# .lower-meesage
+          -#   .lower-message__content
+          -#     = message.content
               -# = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 -#     .form
 -#       %form{:id => 'new_message'}
