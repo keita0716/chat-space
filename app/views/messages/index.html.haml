@@ -8,36 +8,25 @@
           = @group.name
         %ul.left-header__members
           Member：
-          -# - @group_users.each do |group_user|
-          -#   %li.member
-          -#     = group_user.user.name
+          - @group_users.each do |group_user|
+            %li.member
+              = group_user.user.name
       .right-header
         .right-header__button
           = link_to edit_group_path(@group.id) do
             = "Edit"
-    = render 'shared/main_chat'
-    -# .messages
-    -#   - @messages.each do |f|
-    -#     .message{data: {message_id: f.id}}
-    -#       .upper-message
-    -#         .upper-message__user-name
-    -#           = f.user.name
-    -#         .upper-message__date
-    -#           = f.updated_at.strftime('%Y年%m月%d日 %H時%M分')
-    -#       .lower-meesage
-    -#         .lower-message__content
-    -#           = f.content
-    -#           = image_tag f.image.url, class: 'lower-message__image' if f.image.present?
-
-    -# .form
-    -#   = form_for [@group, @message] do |f|
-    -#     = f.text_field :content, class: 'form__message', placeholder: 'type a message' ,name: 'content'
-    -#     .form__mask
-    -#       = f.label :image, class: 'form__mask__image' do
-    -#         = icon('fa', 'image', class: 'icon')
-    -#         = f.file_field :image, class: 'hidden'
-    -#     = f.submit 'Send', class: 'form__submit'
-
+    .messages
+      - @messages.each do |f|
+        .message{data: {message_id: f.id}}
+          .upper-message
+            .upper-message__user-name
+              = f.user.name
+            .upper-message__date
+              = f.updated_at.strftime('%Y年%m月%d日 %H時%M分')
+          .lower-meesage
+            .lower-message__content
+              = f.content
+              = image_tag f.image.url, class: 'lower-message__image' if f.image.present?
     .form
       %form{:id => 'new_message'}
         %input.form__message{:name => 'content'}
