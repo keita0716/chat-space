@@ -1,9 +1,9 @@
 class MessagesController < ApplicationController
-  before_action :set_group
   def index
-    @message = Message.new
+    @group = Group.find(params[:group_id])
     @messages = @group.messages.includes(:user)
     @group_users = GroupUser.where(group_id: params[:group_id])
+    
   end
 
   def create
@@ -17,10 +17,6 @@ class MessagesController < ApplicationController
   private
   def message_params
     params.permit(:content, :image, :group_id)
-  end
-
-  def set_group
-    @group = Group.find(params[:group_id])
   end
 
 end
