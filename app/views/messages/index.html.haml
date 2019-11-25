@@ -19,10 +19,10 @@
           
     .messages
       - @messages.each do |message|
-        .message{data: {message_id: message.id}}
-          .upper-message
-            .upper-message__user-name
-              = message.user.name
+        -# .message{data: {message_id: message.id}}
+        -#   .upper-message
+        -#     .upper-message__user-name
+        -#       = message.user.name
           -#   .upper-message__date
           -#     = message.updated_at.strftime('%Y年%m月%d日 %H時%M分')
           -# .lower-meesage
