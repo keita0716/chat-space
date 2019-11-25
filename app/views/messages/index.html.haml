@@ -1,21 +1,21 @@
--# .wrapper
+.wrapper
 
--#   = render 'shared/side_bar'
+  = render 'shared/side_bar'
 
--#   .chat
--#     .header
--#       .left-header
--#         .left-header__title
--#           = @group.name
--#         %ul.left-header__members
--#           Member：
--#           - @group_users.each do |group_user|
--#             %li.member
--#               = group_user.user.name
--#       .right-header
--#         .right-header__button
--#           = link_to edit_group_path(@group.id) do
--#             = "Edit"
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          = @group.name
+        %ul.left-header__members
+          Member：
+          - @group_users.each do |group_user|
+            %li.member
+              = group_user.user.name
+      .right-header
+        .right-header__button
+          = link_to edit_group_path(@group.id) do
+            = "Edit"
           
 -#     .messages
 -#       - @messages.each do |message|
