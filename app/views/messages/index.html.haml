@@ -30,10 +30,18 @@
     -#           = f.content
     -#           = image_tag f.image.url, class: 'lower-message__image' if f.image.present?
     .form
-      %form{:id => 'new_message'}
-        %input.form__message{:name => 'content'}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message' ,name: 'content'
         .form__mask
-          %label.form__mask__image
-            = icon('fa','image',class: 'icon')
-            %input.hidden{type: 'file',:name => 'image'}
-        %input.form__submit{type: 'submit', value: 'Send'}
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fa', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+    -# .form
+    -#   %form{:id => 'new_message'}
+    -#     %input.form__message{:name => 'content'}
+    -#     .form__mask
+    -#       %label.form__mask__image
+    -#         = icon('fa','image',class: 'icon')
+    -#         %input.hidden{type: 'file',:name => 'image'}
+    -#     %input.form__submit{type: 'submit', value: 'Send'}
